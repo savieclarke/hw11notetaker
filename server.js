@@ -9,10 +9,10 @@ const PORT = process.env.PORT || 5502;
 
 
 const apiRoutes = require('./routes/apiRoutes');
-app.use('/api', apiRoutes);
 
 const htmlRoutes = require('./routes/htmlRoutes');
 app.use('/', htmlRoutes);
+app.use('/api', apiRoutes);
 
 
 //middleware

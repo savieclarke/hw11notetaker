@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const { application } = require('express');
+//const { application } = require('express');
 const storage = require('../db/storage');
 
 
-app.get('/api/notes', (req, res) => {
+router.get('/api/notes', (req, res) => {
     readFile("./db/db.json", "utf8").then(function(data) {
         notes = [].concat(JSON.parse(data))
         res.json(notes);
