@@ -16,13 +16,11 @@ class Storage {
       return writeFile('db/db.json', JSON.stringify(note));
     }
   
-    getNotes() {
-      return this.read().then((notes) => {
-       
-      });
+    async getNotes() {
+      const notes = await this.read();
     }
   
-    addNote(note) {
+    async addNote(note) {
       const { title, text } = note;
   
       if (!title || !text) {
@@ -30,15 +28,15 @@ class Storage {
       }
   
       // unique id 
-      const newNote = { title, text, id: uuidv1() };
+      const newNote = { title, text, id: uuidv4() };
   
-      // Get all notes, add the new note, write all the updated notes, return the newNote
-      return this.getNotes()
-        .then((notes) => [...notes, newNote])
-        .then((updatedNotes) => this.write(updatedNotes))
-        .then(() => newNote);
+      
+      const notes = await this.getNotes();
+        const updatedNotes = [...notes, newNote];
+        await this.write(updatedNotes);
+        return newNote;
     }
   
     
   }
-module.exports = router;
+module.exports = new Storage();
