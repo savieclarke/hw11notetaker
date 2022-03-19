@@ -5,7 +5,7 @@ const storage = require('./db/storage');
 
 // Initialize the app and create a port
 const app = express();
-const PORT = process.env.PORT || 5502;
+const PORT = ('5502');
 
 
 const apiRoutes = require('./routes/apiRoutes');
@@ -48,8 +48,9 @@ app.use(express.static('public'));
   })})*/
 
 // listening
-app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
-
+app.listen(PORT, () => {
+    console.log(`Listening on PORT: ${PORT}`)
+})
 
 
 

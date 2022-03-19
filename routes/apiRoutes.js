@@ -3,7 +3,7 @@ const router = require('express').Router();
 const storage = require('../db/storage');
 
 
-router.get('/api/notes', (req, res) => {
+router.get('/notes', (req, res) => {
     readFile("./db/db.json", "utf8").then(function(data) {
         notes = [].concat(JSON.parse(data))
         res.json(notes);
@@ -30,7 +30,7 @@ router.get('/api/notes', (req, res) => {
 });*/
 
 
-router.post('/api/notes', (req, res) => {
+router.post('/notes', (req, res) => {
     const note = req.body;
   readFileAsync("./db/db.json", "utf8").then(function(data) {
       const notes = [].concat(JSON.parse(data));
