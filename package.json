@@ -2,5 +2,26 @@
   "dependencies": {
     "express": "^4.17.3",
     "uuid": "^8.3.2"
-  }
+  },
+  "name": "hw11notetaker",
+  "description": "``` AS A small business owner I WANT to be able to write and save notes SO THAT I can organize my thoughts and keep track of tasks I need to complete ```",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/savieclarke/hw11notetaker.git"
+  },
+  "keywords": [
+    "notes"
+  ],
+  "author": "sc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/savieclarke/hw11notetaker/issues"
+  },
+  "homepage": "https://github.com/savieclarke/hw11notetaker#readme"
 }
